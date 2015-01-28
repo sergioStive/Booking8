@@ -1,0 +1,39 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+<title>Booking Routers</title>
+<link type="text/css" rel="stylesheet" href="css/css.css" />
+<link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist/bootstrap-3.2.0-dist/css/bootstrap.css">
+<link rel="shortcut icon" href="imagenes/br.ico" />
+<script src="scripts/bookclient.js" type="text/javascript">
+</script>
+</head>
+<body>
+
+<div id="pagina">
+<p><a href="Index.html"><img src="imagenes/Logo.png" alt="Bookin Routers" width="1197" height="126" title="Forget the rest, call the best"  /></a></p>
+<header>
+<nav>
+<ul id="main">   
+
+       <li><a align="center" href="bookclient.html">Inicio</a></li>
+       <li><onClick="cerrar();showDiv('caso3');"><a align="center" href="#">Actualizar datos</a></li>
+  	   <li><a align="center" href="#">Gestion Reserva</a>
+      <ul class="submain">
+      <li><a align="center" onClick="cerrar();showDiv('caso4')"><a href="#">Solicitar Reservas </a></li>
+      <li><a align="center" onClick="cerrar();showDiv('caso7');"><a href="#">Modificar Reserva</a> </li>
+      <li><a align="center" onClick="cerrar();showDiv('caso6');"><a href="#">Cancelar Reserva</a></li>
+ </ul>
+ </li>
+ <li><a align="center"  href="#">Reportes</a>
+      <ul class="submain">
+ <li><a align="center"  href="#">Reservas</a> </li>
+</ul>
+ </li>
+
+  <li>
+    <onClick="abrirVentana();cerrarVentana()"><a align="center" href="#">Salir</a> 
+</li>
+</div>
+</body>
+</html>

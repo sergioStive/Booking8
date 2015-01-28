@@ -1,0 +1,537 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Booking Routers</title>
+<link type="text/css" rel="stylesheet" href="css/estilosbookingrouters.css" />
+<link rel="shortcut icon" href="imagenes/br.ico" />
+<script src="scripts/bookclient.js" type="text/javascript">
+</script>
+</head>
+<body>
+<div class ="contenedor">
+	<div class="banner">
+     <p><a href="Index.html"><img src="imagenes/logo.png" alt="Bookin Routers" width="1197" height="126" title="Forget the rest, call the best"  /></a></p>
+	</div>
+  <div class="menu">    
+	  <menu id="nav"> 
+  	<li>
+  	  <div align="center" ><a href="bookclient.html">Inicio</a>    
+      </div>
+  	</li>
+    <li>
+      <div align="center" onClick="cerrar();showDiv('caso3');"><a href="#">Actualizar datos</a></div>
+     </li>
+  	<li>
+    <div align="center"><a href="#">Gestion Reserva</a></div>
+      <ul>
+      <li>
+  	  <div align="center" onClick="cerrar();showDiv('caso4')"><a href="#">Solicitar Reservas </a></div>  	  
+   </li>
+  <li>
+    <div align="center" onClick="cerrar();showDiv('caso7');"><a href="#">Modificar Reserva</a> 
+    </div>
+   </li>
+  <li>
+    <div align="center" onClick="cerrar();showDiv('caso6');"><a href="#">Cancelar Reserva</a> 
+    </div>
+   </li>
+   </ul>
+     </li>
+ 
+  <li>
+    <div align="center"><a href="#">Reportes</a> 
+    </div>
+       <ul>
+     <li>
+    <div align="center"><a href="#">Reservas</a> 
+    </div>
+  </li>
+  </ul>
+</li>
+  <li>
+    <div align="center" onClick="abrirVentana();cerrarVentana()"><a href="#">Salir</a> 
+    </div>
+</li>
+    </menu>
+ </div>
+
+<div id="caso3"  style="display: block; position: relative; top: 60px;">
+<form id="actua" action="mailto:wilsonacua@misena.edu.co" method="get" enctype="text/plain" > 
+  <fieldset>
+  <legend>Actualizacion de Datos</legend>
+  <table width="744" align="center" id="registro">
+    <tr>
+      <td colspan="5" align="center"><strong><font size="+1">Actualizacion de Datos</font></strong></td>
+    </tr>
+    <tr>
+      <td colspan="5">Caso Uso 3 - Permitir al usuario actualizar datos vía Web. </td>
+    </tr>
+    <tr>
+      <td width="150"><label for="nombre"><strong>Nombres </strong></label>
+        <font color="#FF0000">*</font></td>
+      <td width="195"><input name="nombres" type="text" autofocus disabled id="nombre" placeholder="Nombres" tabindex="1" onChange="requisitos(nombre)" value="Isabela" size="30" minlenght=3></td>
+      <td>&nbsp;</td>
+      <td width="102"><label for="empresa"><strong>Empresa</strong></label></td>
+      <td width="259"><input name="textfield30" type="text" id="empresa" placeholder="Nombre empresa" tabindex="10" value="SENA" size="30"></td>
+    </tr>
+    <tr>
+      <td width="150"><label for="ape"><strong>Apellidos</strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="apellidos" type="text" disabled id="ape" placeholder="Apellidos" tabindex="2" onChange="requisitos(ape)" value="Saavedra Maldonado" size="30"></td>
+      <td>&nbsp;</td>
+      <td><label for="car"><strong>Cargo</strong></label></td>
+      <td><input name="cargo" type="text" id="cargo" placeholder="Cargo" tabindex="11" value="Analista programador" size="30"></td>
+    </tr>
+    <tr>
+      <td width="150"><label for="doc"><strong>Número Documento </strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="doc" type="number" disabled id="doc" placeholder="Doc Identidad" tabindex="3" onChange="requisitos(doc)" value="10101101" size="30"></td>
+      <td>&nbsp;</td>
+      <td><label for="paisemp"><strong>País</strong></label></td>
+      <td><input name="paisemp" id="paisemp" placeholder="Seleccione país" list="paises" tabindex="12" value="Colombia" size="30">
+        <datalist id="paises">
+          <option label="ARG">Argentina</option>
+          <option label="BRA">Brasil</option>
+          <option label="CHI">Chile</option>
+          <option label="COL">Colombia</option>
+          <option label="ECU">Ecuador</option>
+          <option label="PER">Perú</option>
+        </datalist></td>
+    </tr>
+    <tr>
+      <td width="150" nowrap><label for="date"><strong>Fecha Nacimiento </strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="date" type="date" disabled id="date" tabindex="4" onChange="edad()" value="1983-07-20"></td>
+      <td>&nbsp;</td>
+      <td><label for="ciuemp"><strong>Ciudad</strong></label></td>
+      <td><input name="ciuemp" id="ciuemp" placeholder="Seleccione ciudad" list="ciudades" tabindex="13" value="Bogota" size="30">
+        <datalist id="ciudades">
+          <option label="BOG">Bogota</option>
+          <option label="CLO">Cali</option>
+          <option label="MED">Medellin</option>
+          <option label="BAR">Barranquilla</option>
+        </datalist></td>
+    </tr>
+    <tr>
+      <td width="150"><label for="dire"><strong>Dirección </strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="dire" type="text" id="dire" placeholder="Direccion" tabindex="5" onChange="requisitos(dire)" value="Calle 148 No. 94A - 10 Casa 53" size="30"></td>
+      <td>&nbsp;</td>
+      <td><label for="dir1"><strong>Dirección</strong></label></td>
+      <td><input name="textfield32" type="text" id="diremp" placeholder="Direccion empresa" tabindex="14" value="Calle 13 No. 65-10" size="30"></td>
+    </tr>
+    <tr>
+      <td width="150"><label for="tel"><strong>Teléfonos </strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="tel" type="text" id="tel" placeholder="Telefono" tabindex="6" onChange="requisitos(tel)" value="8133609, 3114992904" size="30"></td>
+      <td>&nbsp;</td>
+      <td><label for="tel1"><strong>Teléfonos</strong></label></td>
+      <td><input name="telemp" type="text" id="telemp" placeholder="Telefono empresa" tabindex="15" value="545466" size="30"></td>
+    </tr>
+    <tr>
+      <td width="150"><label for="cor"><strong>Correo Electrónico</strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="cor" type="email" id="cor"placeholder="asldj@misena.edu.co" tabindex="7" onChange="requisitos(cor)" value="wilsonacua@misena.edu.co" size="30"></td>
+      <td>&nbsp;</td>
+      <td><label for="obs"><strong>Observaciones </strong></label></td>
+      <td rowspan="3"><textarea name="obsr" cols="31" rows="5" id="obs" placeholder="Observaciones" tabindex="16" >Soy el hijo de Santos</textarea></td>
+    </tr>
+    <tr>
+      <td width="150"><label for="paisnac"><strong>País </strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="paisnac" id="paisnac" placeholder="Seleccione país" list="paises" tabindex="8" value="Colombia" size="30">
+        <datalist id="paises">
+          <option label="ARG">Argentina</option>
+          <option label="BRA">Brasil</option>
+          <option label="CHI">Chile</option>
+          <option label="COL">Colombia</option>
+          <option label="ECU">Ecuador</option>
+          <option label="PER">Perú</option>
+        </datalist></td>
+      <td>&nbsp;</td>
+      <td><a name="war" id="war" class="tooltip" href="#" hidden><font color="#FF0000">* Campo requerido</font><span class="custom critical"><img src="imagenes/Critical.png" alt="Error" height="48" width="48"><em>Critico</em>Los campos en Rojo se deben diligenciar</span></a></td>
+    </tr>
+    <tr>
+      <td width="150"><label for="ciunac"><strong>Ciudad</strong></label>
+        <font color="#FF0000">*</font></td>
+      <td><input name="ciunac" id="ciunac" placeholder="Seleccione ciudad" list="ciudades" tabindex="9" value="Bogota" size="30">
+        <datalist id="ciudades">
+          <option label="BOG">Bogota</option>
+          <option label="CLO">Cali</option>
+          <option label="MED">Medellin</option>
+          <option label="BAR">Barranquilla</option>
+        </datalist></td>
+      <td nowrap>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    <tr>
+      <td width="150" height="45"><label for="con"><strong>Cambio Contraseña </strong></label></td>
+      <td colspan="2"><input name="con" type="password" id="con" tabindex="17" size="10">
+        <input name="vcon" type="password" id="vcon" tabindex="18" size="10"></td>
+      <td><input name="submit11" type="button" id="ccon" tabindex="19" onClick="contrase()" value="Confirmar"></td>
+      <td><input name="submit10" type="button" id="enviar" tabindex="20"  value="Enviar" onClick="validar(registro)"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>Campos obligatorios</strong><font color="#FF0000">*</font></td>
+      <td width="14">&nbsp;</td>
+      <td width="102"><input type="button" name="button" id="button" value="Salir" onClick="cerrar()"></td>
+      <td width="259">&nbsp;</td>
+    </tr>
+  </table>
+</form>
+  </div>
+<Center>
+  <div id="caso4"  style="display: none; position: relative; top: 100px;">
+    <table width="600" border="0">
+  <tr>
+    <td colspan="2" align="center"><strong><font size="+1">Solicitar Reservas</font></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">Caso Uso 4 - Solicitar reservas vía Web.</td>
+    </tr>
+  <tr>
+    <td width="210"><label for="solr"><strong>Tipo de Servicio</strong></label><font color="#FF0000">*</font></td>
+    <td width="509"><select name="select2" required id="solr" onChange="showDiv('servicios')">
+      <option selected >-</option>
+      <option>Airport and Jet Aviation Centers</option>
+      <option>Port and Cruise Ship Transportation</option>
+      <option>Transfer</option>
+      <option>By the Hour</option>
+      <option>Events</option>
+      <option>Tours</option>
+      <option>Atraccions Vacation Ideas</option>
+      <option>Not Listed</option>
+    </select></td> 
+  </tr>
+</table>
+  </div>
+
+ <div id="servicios"  style="display: none; position: relative; top: 100px;">
+  <table width="600" border="0">
+  <tr>
+    <td width="164"><label for="ser"><strong>Servicios</strong></label><font color="#FF0000">*</font></td>
+    <td width="426"><select name="select9" required id="ser" onChange="showDiv('caso4x')">
+      <option selected >-</option>
+      <option>To Any area in Miami</option>
+      <option>To Miami Airport - One way</option>
+      <option>To Miami Airport - Round Trip</option>
+      <option>From Miami Airport - One way</option>
+      <option>From Miami Airport - Round Trip</option>
+      <option>To Fort Lauderdale Airport - One Way</option>
+      <option>To Fort Lauderdale Airport - Round Trip</option>
+      <option>Not Listed</option>
+    </select></td>
+  </tr>
+    </table></div>
+ 
+  <div id="caso4x"  style="display: none; position: relative; top: 100px;">
+  <center>
+  <table width="600" border="0">
+  <tr>
+    <td width="89"><label for="aero"><strong>Aerolínea</strong></label><font color="#FF0000">*</font></td>
+    <td width="179"><select name="select" id="aero">
+      <option>-</option>
+      <option selected>Avianca</option>
+      <option>TACA</option>
+      <option>LanChile</option>
+    </select></td>
+    <td><label for="vue"><strong>Número de Vuelo</strong></label><font color="#FF0000">*</font></td>
+    <td><input name="textfield25" type="text" id="vue" placeholder="Num. Vuelo" value="AV512" size="24"></td>
+    </tr>
+  <tr>
+    <td width="89"><label for="dvue"><strong>Día del Vuelo </strong></label><font color="#FF0000">*</font></td>
+    <td><input name="datev" type="date" id="dvue" value="2014-07-20"></td>
+    <td><label for="hvue"><strong>Hora de Llegada</strong></label><font color="#FF0000">*</font></td>
+    <td><input name="time" type="time" id="hvue" value="09:45:00"></td>
+    </tr>
+  <tr>
+    <td width="89"><label for="pai"><strong>País Origen</strong></label><font color="#FF0000">*</font></td>
+    <td><select name="select5" required id="pai" onChange="pais()">
+      <option value="1" selected>Colombia</option>
+      <option value="2">Ecuador</option>
+      <option value="3">Peru</option>
+    </select></td>
+    <td width="134"><label for="ciuo"><strong>Ciudad Origen</strong></label><font color="#FF0000">*</font></td>
+    <td width="180"><select name="select3" required id="ciuo">
+      <option selected>Bogota</option>
+      <option>Cali</option>
+      <option>Barranquilla</option>
+      <option>Medellin</option>
+    </select></td>
+  </tr>
+  <tr>
+    <td colspan="2"><label for="daero"><strong>Aeropuerto Destino </strong></label><font color="#FF0000">*</font>
+      <select name="select4" required id="daero">
+        <option>-</option>
+        <option selected>Miami Intl</option>
+        <option>Fort Lauderdale</option>
+      </select>
+    </font></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="89">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+
+  <tr>
+    <td colspan="2"><strong><u>Datos de los Turistas</u></strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2"><input type="checkbox" name="radio4" id="radio4" onClick="mostrar()">
+      <strong>Mismo Cliente</strong></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  </table>
+<center>
+  <table width="600" border="0">
+    <tr>
+      <td width="237">Nombres</td>
+      <td width="119">Documento</td>
+      <td width="43">Edad</td>
+      <td width="47">Equip</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><input name="textfield45" type="text" id="textfield45"placeholder="Nombres" size="30"></td>
+      <td><input name="textfield46" type="text" id="textfield46" placeholder="Id. Documento" size="15"></td>
+      <td><input name="textfield47" type="text" id="textfield47" placeholder="Edad" size="5"></td>
+      <td><select name="select25" id="equi">
+        <option>-</option>
+        <option>1</option>
+        <option>2</option>
+        <option>+3</option>
+      </select></td>
+      <td width="56"><img src="imagenes/actux.png"  alt="Actualizar" width="30" height="30" title="Adicionar Pasajero" ></td>
+      <td width="72"><img src="imagenes/elim.png"  alt="Eliminar" width="30" height="30" title="Eliminar Pasajero" onclick="elimi()"></td>
+    </tr>
+  </table>
+  <center>
+  <table width="600" border="0">
+    <tr>
+      <td><strong>Observaciones </strong></td>
+      <td><input name="textfield16" type="text" id="textfield16" value="1 persona en silla de ruedas" size="60"></td>
+    </tr>
+    <tr>
+      <td><strong>Campos obligatorios</strong><font color="#FF0000">*</font></td>
+      <td><input type="submit" name="submit" id="submit" value="Realizar Reserva" onClick="confirmar()">
+      <input type="button" name="button2" id="button2" value="Salir" onClick="cerrar()"></td>
+    </tr>
+  </table>
+</div>
+
+<div id="caso6"  style="display: none; position: relative; top: 100px;">
+  <table width="600" border="0">
+    <tr>
+      <td colspan="2" align="center"><strong><font size="+1">Cancelar Reserva</font></strong></td>
+    </tr>
+    <tr>
+    <td colspan="2">Caso Uso 6 - Permitir  al usuario y o al gerente cancelar la reserva vía Web.<strong> </strong></td>
+    </tr>
+  <tr>
+    <td width="210"><label for="cres"><strong>Cancelar reservas</strong></label><font color="#FF0000">*</font></td>
+    <td width="509"><select name="select2" required id="cres" onChange="showDiv('caso6x')">
+      <option selected >-</option>
+      <option>156c</option>
+      <option>156v</option>
+      <option>156e</option>
+    </select></td>
+  </tr>
+</table>
+  </div>
+<div id="caso6x"  style="display: none; position: relative; top: 100px;">
+  <center>
+  <table width="600" border="0">
+    <tr>
+      <td width="188"><U><strong>Contacto</strong></U></td>
+      <td width="163"><U><strong>Teléfonos</strong></strong></U></td>
+      <td width="235"><U><strong>Correo</strong></strong></U></td>
+    </tr>
+    <tr>
+      <td>Isabela Saavedra Maldonado</td>
+      <td>8133609, 311 4992904</td>
+      <td>wilsonacua@misena.edu.do</td>
+    </tr>
+    <tr>
+      <td><label for="mcan"><strong>Motivos Cancelación</strong></label><font color="#FF0000">*</font></td>
+      <td colspan="2"><textarea name="textarea" cols="42" rows="2" id="mcan"></textarea></td>
+    </tr>
+    <tr>
+      <td><strong>Campos obligatorios</strong><font color="#FF0000">*</font></td>
+      <td><input type="submit" name="submit" id="submit" value="Cancelar Reserva" onClick="alert('Usted cancelo la reserva correctamente!\n Se enviará un correo a ASPTOURS informado la cancelación de la reserva!!');hideDiv('caso6');hideDiv('caso6x')"></td>
+      <td><input type="button" name="button3" id="button3" value="Salir" onClick="cerrar()"></td>
+    </tr>
+  </table>
+</div>
+
+<div id="caso7"  style="display: none; position: relative; top: 100px;">
+    <table width="600" border="0">
+  <tr>
+    <td colspan="2" align="center"><strong><font size="+1">Modificar Reserva</font></strong></td>
+  </tr>
+  <tr>
+    <td colspan="2">Caso Uso 7 - Permitir al usuario modificar una reserva vía Web.</td>
+    </tr>
+  <tr>
+    <td width="90"><label for="mres"><strong>Reservas</strong></label><font color="#FF0000">*</font></td>
+    <td width="500"><select name="select2" required id="mres" onChange="showDiv('caso7x')">
+      <option selected >-</option>
+      <option>156c</option>
+      <option>159c</option>
+      <option>178c</option>
+    </select></td>
+  </tr>
+   </table>
+  </div>
+  
+<div id="caso7x"  style="display: none; position: relative; top: 100px;">
+  <table width="600" border="0">
+    <tr>
+      <td width="89"><label for="mres1"><strong>Aerolínea</strong></label><font color="#FF0000">*</font></td>
+      <td width="179" align="left"><select name="select7" id="mres1">
+        <option>-</option>
+        <option selected>Avianca</option>
+        <option>TACA</option>
+        <option>LanChile</option>
+      </select></td>
+      <td><label for="mvue"><strong>Número de Vuelo</strong></label><font color="#FF0000">*</font></td>
+      <td><input name="textfield4" type="text" id="mvue" placeholder="Num. Vuelo" value="AV512" size="24"></td>
+    </tr>
+    <tr>
+      <td width="89"><label for="datev2"><strong>Día del Vuelo </strong></label><font color="#FF0000">*</font></td>
+      <td><input name="datev2" type="date" id="datev2" value="2014-07-20"></td>
+      <td><label for="time2"><strong>Hora de Llegada</strong></label><font color="#FF0000">*</font></td>
+      <td><input name="time2" type="time" id="time2" value="09:45:00"></td>
+    </tr>
+    <tr>
+      <td width="89"><label for="mpais"><strong>País Origen</strong></label><font color="#FF0000">*</font></td>
+      <td><select name="select7" required id="mpais" onChange="pais()">
+        <option value="1" selected>Colombia</option>
+        <option value="2">Ecuador</option>
+        <option value="3">Peru</option>
+      </select></td>
+      <td width="134"><label for="mciuo"><strong>Ciudad Origen</strong></label><font color="#FF0000">*</font></td>
+      <td width="180"><select name="select7" required id="mciuo">
+        <option selected>Bogota</option>
+        <option>Cali</option>
+        <option>Barranquilla</option>
+        <option>Medellin</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td colspan="2"><label for="maerod"><strong>Aeropuerto Destino </strong></label><font color="#FF0000">*</font>
+        <select name="select7" required id="maerod">
+          <option>-</option>
+          <option selected>Miami Intl</option>
+          <option>Fort Lauderdale</option>
+        </select>
+      </font></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="89">&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong><u>Datos de los Turistas</u></strong></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="checkbox" name="radio" id="radio" onClick="pass()">
+        <strong>Mismo Cliente</strong></td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <table width="600" border="0">
+    <tr>
+      <td width="31">&nbsp;</td>
+        <td width="214">Nombres</td>
+        <td width="108">Documento</td>
+        <td width="54">Edad</td>
+        <td width="56">Equip</td>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+      <tr>
+        <td><input type="checkbox" name="radio6" id="radio6" onClick="mostrar()"></td>
+        <td><input name="textfield8" type="text" id="textfield8"placeholder="Nombres" value="Isabela Saavedra Maldonado" size="30"></td>
+        <td><input name="textfield9" type="text" id="textfield9" placeholder="Id. Documento" value="10101101" size="15"></td>
+        <td><input name="textfield10" type="text" id="textfield10" placeholder="Edad" value="30" size="5"></td>
+        <td><input name="textfield11" type="text" id="textfield11" placeholder="equip" value="2" size="5"></td>
+        <td width="39"><img src="imagenes/actux.png"  alt="Actualizar" width="30" height="30" title="Adicionar Pasajero" ></td>
+        <td width="78"><img src="imagenes/elim.png"  alt="Eliminar" width="30" height="30" title="Eliminar Pasajero" onclick="elimi()"></td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="radio7" id="radio7" onClick="mostrar()"></td>
+        <td><input name="textfield9" type="text" id="textfield19"placeholder="Nombres" value="Jorge Pérez" size="30"></td>
+        <td><input name="textfield12" type="text" id="textfield22" placeholder="Id. Documento" value="4545642" size="15"></td>
+        <td><input name="textfield15" type="text" id="textfield25" placeholder="Edad" value="45" size="5"></td>
+        <td><input name="textfield21" type="text" id="textfield28" placeholder="equip" value="2" size="5"></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="radio8" id="radio8" onClick="mostrar()"></td>
+        <td><input name="textfield10" type="text" id="textfield20"placeholder="Nombres" value="Ana María Maldonado" size="30"></td>
+        <td><input name="textfield13" type="text" id="textfield23" placeholder="Id. Documento" value="5644465" size="15"></td>
+        <td><input name="textfield19" type="text" id="textfield26" placeholder="Edad" value="20" size="5"></td>
+        <td><input name="textfield22" type="text" id="textfield29" placeholder="equip" value="2" size="5"></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="radio9" id="radio9" onClick="mostrar()"></td>
+        <td><input name="textfield11" type="text" id="textfield21"placeholder="Nombres" value="Laura Saavedra" size="30"></td>
+        <td><input name="textfield14" type="text" id="textfield24" placeholder="Id. Documento" value="1354652" size="15"></td>
+        <td><input name="textfield20" type="text" id="textfield27" placeholder="Edad" value="1" size="5"></td>
+        <td><input name="textfield23" type="text" id="textfield34" placeholder="equip" value="2" size="5"></td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><label for="mobs1"><strong>Observaciones </strong></label></td>
+        <td colspan="5"><input name="textfield24" type="text" id="mobs1" placeholder="Observaciones" value="1 persona en silla de ruedas" size="60"></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><strong>Campos obligatorios</strong><font color="#FF0000">*</font></td>
+        <td colspan="5"><input type="submit" name="submit15" id="submit15" value="Modificar Reserva" onClick="alert('Usted modificó la reserva correctamente!\nASPTOURS le confirmará la reserva'); cerrar(); showDiv('reservam')">
+        <input type="button" name="button4" id="button4" value="Salir" onClick="cerrar()"></td>
+      </tr>
+  </table>
+    <p>&nbsp;</p>
+</div>
+  
+   <div id="reserva"  style="display: none; position: relative; top: 100px;">
+<embed src="imagenes/reservas.pdf" width="1000" height="375">
+</embed><br>
+<input type="submit" name="submit5" id="submit5" value="Cerrar" onClick="hideDiv('reserva')">
+</div>
+
+<div id="reservam"  style="display: none; position: relative; top: 100px;">
+<embed src="imagenes/Reservasm.pdf" width="1000" height="375">
+</embed><br>
+<input type="submit" name="submit1" id="submit1" value="Cerrar" onClick="hideDiv('reservam')">
+</div>
+
+</body>
+
+<html>
